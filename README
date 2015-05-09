@@ -1,0 +1,63 @@
+run_analysis.R
+
+1.Merges the training and the test sets to create one data set.
+2.Extracts only the measurements on the mean and standard deviation for each measurement. 
+3.Uses descriptive activity names to name the activities in the data set
+4.Appropriately labels the data set with descriptive variable names. 
+
+5.From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+
+  
+This program reads the data from current working directory.
+
+iT reads Test and train data set
+
+ it use librarty library(reshape2) 
+
+getData ( dir, name ) funtion
+  get Data functions reads data in cleanDataframe for the files in data directory passed
+
+  Parameter: 
+  <dir>- current working directory
+  < Name> - name of the subdiurectiry
+  
+  
+  #  create the actual path for sub directory
+  dirpath <- file.path(dir, name) 
+  
+  
+  # Read the features table data into cleanData
+  # Read the activities list data into cleanData
+  # Read the subjects list into cleanData
+  # Return the cleanData 
+
+
+main program:
+
+# Performs the full analysis of both the test and train 
+# datasets. Writes a clean dataset to disk. 
+  
+  # "set  current working directory to data directory"
+  
+  # Read the "test"data. 
+  
+ # Read the "train"data. 
+  
+  # Join the train and test data. 
+ 
+  # Reshape the data. Melting and DaCASTING
+  
+  long <- melt(finalData, id = c("subject", "activity")) 
+  
+  wide <- dcast(long, subject + activity ~ variable, mean) 
+  
+  
+  # final Tidyup data keeping wide . 
+ 
+  # final tidy data file will be saved as cleanData.txt
+ 
+  # Save the clean data -cleanData.txt
+
+# use write.table to to save the data
+  
